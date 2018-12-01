@@ -6,5 +6,7 @@ namespace EPAM.Task02._2._1.ROUND
 {
     class Point
     {
+
+
     }
 }
