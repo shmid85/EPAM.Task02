@@ -17,12 +17,20 @@ namespace EPAM.Task02._2._3.USER
         public string Name {
             get => name;
             set {
-
-
-
+                if (value.Length > 20 || value.Length <= 0)
+                    throw new ArgumentException("Количество символов в имени должно быть больше 0, но меньше 20", nameof(name));
+                name = value;
             }
         }
-        public string Sername { get => sername; set => sername = value; }
+        public string Sername {
+            get => sername;
+            set
+            {
+                if (value.Length > 20 || value.Length <= 0)
+                    throw new ArgumentException("Количество символов в фамилии должно быть больше 0, но меньше 20", nameof(sername));
+                sername = value;
+            }
+        }
         public string Middlename { get => middlename; set => middlename = value; }
         public DateTime Birthdate { get => birthdate; set => birthdate = value; }
         public int Age
