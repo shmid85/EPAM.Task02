@@ -14,11 +14,12 @@ namespace EPAM.Task02._2._2.TRIANGLE
         public double A {
             get => a;
             set {
-                if (value > 0)
+                if (value <= 0)
                 {
-                    a = value;
+                    throw new ArgumentException("Сторона должна быть больше нуля", nameof(a));
                 }
-                else throw new ArgumentException("Сторона должна быть больше нуля", nameof(a));
+                a = value;
+
             }
         }
         public double B
@@ -26,11 +27,11 @@ namespace EPAM.Task02._2._2.TRIANGLE
             get => b;
             set
             {
-                if (value > 0)
+                if (value <= 0)
                 {
-                    b = value;
+                    throw new ArgumentException("Сторона должна быть больше нуля", nameof(b));
                 }
-                else throw new ArgumentException("Сторона должна быть больше нуля", nameof(b));
+                b = value;
             }
         }
         public double C
@@ -38,11 +39,11 @@ namespace EPAM.Task02._2._2.TRIANGLE
             get => c;
             set
             {
-                if (value > 0)
+                if (value <= 0)
                 {
-                    c = value;
+                    throw new ArgumentException("Сторона должна быть больше нуля", nameof(c));
                 }
-                else throw new ArgumentException("Сторона должна быть больше нуля", nameof(c));
+                c = value;
             }
         }
 
