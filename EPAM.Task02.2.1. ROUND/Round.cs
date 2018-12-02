@@ -6,36 +6,38 @@ namespace EPAM.Task02._2._1.ROUND
 {
     class Round
     {
+        private double radius;
+        private Point center;
+        private double square;
+        private double length;
         public Round() { }
         public Round(double r, int x=0, int y=0) {
             Radius = r;
-            Center.X = x;
-            Center.Y = y;
+            center = new Point(x,y);
+            square = 2 * Math.PI * Math.Pow(radius, 2);
+            length = 2 * Math.PI * radius;
         }
-
-
+        
         public double Radius {
-            get => Radius;
+            get => radius;
             private set {
                 if (value > 0)
                 {
-                    Radius = value;
+                    radius = value;
                 }else throw new ArgumentException("Радиус должен быльше нуля");
             }
         }
         public double LengthOfRound {
-            get => LengthOfRound;
-            private set => LengthOfRound = 2 * Math.PI * Radius;
+            get => length;
         }
         public double SquareOfRound {
-            get => SquareOfRound;
-            private set => SquareOfRound = 2 * Math.PI * Math.Pow(Radius, 2);
+            get => square;
         }
 
         public Point Center {
-            get => Center;
+            get => center;
             set {
-                Center = new Point();
+                center = value;
             }
         }
     }
