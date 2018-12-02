@@ -46,14 +46,20 @@ namespace EPAM.Task02._2._2.TRIANGLE
             array = new Triangle[AskN()];
             for (int i = 0; i < n; i++)
             {
-                try
-                {
-                    array[i] = new Triangle(AskSide(i, "a"), AskSide(i, "b"), AskSide(i, "c"));
-                    Console.WriteLine($"Треугольник № {i + 1} создан");
-                }
-                catch (ArgumentException e) {
-                    Console.WriteLine($"Треугольник № {i + 1} не существует");
-                }
+                double a = 0;
+                double b = 0;
+                double c = 0;
+                do {
+                    a = AskSide(i, "a");
+                    b = AskSide(i, "b");
+                    c = AskSide(i, "c");
+                    if (!Triangle.triangleExist(a, b, c)) Console.WriteLine("Такой треугольник не существует");
+
+                } while (!Triangle.triangleExist(a, b, c));
+                
+                 array[i] = new Triangle(a, b, c);
+                 Console.WriteLine($"Треугольник № {i + 1} создан");
+                
                 Console.WriteLine(new String('_', 50));
             }
             return array;

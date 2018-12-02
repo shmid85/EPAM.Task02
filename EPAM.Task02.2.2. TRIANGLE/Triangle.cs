@@ -68,7 +68,7 @@ namespace EPAM.Task02._2._2.TRIANGLE
             return (a + b + c)/2;
         }
 
-        public bool triangleExist(double a, double b, double c) {
+        public static bool triangleExist(double a, double b, double c) {
             return ((a < (b + c)) & (b < (a + c)) & (c < (a + b)));
         }
     }
