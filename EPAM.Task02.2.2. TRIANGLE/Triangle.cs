@@ -48,13 +48,13 @@ namespace EPAM.Task02._2._2.TRIANGLE
         }
 
         public Triangle(double a, double b, double c) {
-            if (triangleExist(a, b, c))
+            if (!triangleExist(a, b, c))
             {
-                this.a = a;
-                this.b = b;
-                this.c = c;
+                throw new ArgumentException("Треугольник с указанными сторонами не существует");
             }
-            else throw new ArgumentException("Треугольник с указанными сторонами не существует");
+            this.a = a;
+            this.b = b;
+            this.c = c;
         } 
 
         public double CalculaterSquare(){
