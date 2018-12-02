@@ -13,8 +13,7 @@ namespace EPAM.Task02._2._1.ROUND
             Console.ForegroundColor = ConsoleColor.Green;
             GenerateArrayOfRouns();
             ShowRounds();
-            Console.ReadLine();
-            
+            Console.ReadLine();            
         }
 
         public static Round[] GenerateArrayOfRouns() {
