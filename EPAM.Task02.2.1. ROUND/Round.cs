@@ -21,10 +21,11 @@ namespace EPAM.Task02._2._1.ROUND
         public double Radius {
             get => radius;
             private set {
-                if (value > 0)
+                if (value <= 0)
                 {
-                    radius = value;
-                }else throw new ArgumentException("Радиус должен быльше нуля");
+                    throw new ArgumentException("Радиус должен быльше нуля");
+                }
+                radius = value;
             }
         }
         public double LengthOfRound {
